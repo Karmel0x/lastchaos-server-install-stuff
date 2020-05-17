@@ -1,0 +1,49 @@
+### DDoS Protection: APF, BFD, DDoS and RootKit Utilities
+
+## https://www.iplocation.net/apf-bfd-ddos-rootkit
+# APF -- Advanced Policy-based Firewall
+cd /usr/src
+mkdir utils
+cd utils
+wget http://rfxnetworks.com/downloads/apf-current.tar.gz
+tar xfz apf-current.tar.gz
+cd apf-*
+./install.sh
+
+# Read the README.apf and README.antidos for configuration options.
+# Edit the /etc/apf/conf.apf and modify the following lines to your need.
+DEVEL_MODE="0"
+IG_TCP_CPORTS="21,22,25,53,80,110,143,443,3306"
+IG_UDP_CPORTS="53,111"
+#USE_AD="1"
+# Edit the /etc/apf/ad/conf.antidos as you fit necessary, and start the APF firewall.
+apf --start
+
+# BFD -- Brute Force Detection
+cd /usr/src/utils
+wget http://rfxnetworks.com/downloads/bfd-current.tar.gz
+tar xfz bfd-current.tar.gz
+cd bfd-*
+./install.sh
+
+# Read the README file, and edit the configuration file located in /usr/local/bfd/conf.bfd.
+#Find ALERT="0" and replace it with ALERT="1"
+#Find EMAIL_USR="root" and replace it with EMAIL_USR="username@yourdomain.com"
+#Edit /usr/local/bfd/ignore.hosts file, and add your own trusted IPs. BFD uses APF and hence it overrides allow_hosts.rules, so it is important that you add trusted IP addresses to prevent yourself from being locked out. 
+# Start the program.
+/usr/local/sbin/bfd -s
+
+# DoS Deflate
+cd /usr/src/utils
+wget http://www.inetbase.com/scripts/ddos/install.sh
+sh install.sh
+
+#Edit the configuration file, /usr/local/ddos/ddos.conf, and start the ddos.
+/usr/local/ddos/ddos.sh -c
+# Autostart: /etc/rc.d/rc.local
+/usr/local/sbin/apf --start
+/usr/local/ddos/ddos.sh -c
+
+# Unable to load iptables module (ip_tables), aborting.
+#/etc/apf/conf.apf
+#SET_MONOKERN=1
