@@ -5,7 +5,7 @@
 $zipdir = './';
 $sevenzip = PHP_OS == 'WINNT' ? '7z1900-extra\\7za.exe' : 'p7zip_16.02/bin/7za';
 
-echo 'LC Update Optimizer (<a href="https://github.com/Karmel0x/lastchaos-some-usefull-staff">https://github.com/Karmel0x/lastchaos-some-usefull-staff</a>)<br><br>';
+echo 'LC Update Optimizer (<a href="https://github.com/Karmel0x/lastchaos-some-usefull-stuff">https://github.com/Karmel0x/lastchaos-some-usefull-stuff</a>)<br><br>';
 
 if(!file_exists($sevenzip)){
 	echo 'You need 7z to use this tool<br>';
