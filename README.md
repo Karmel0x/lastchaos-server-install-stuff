@@ -1,4 +1,4 @@
-# Last Chaos Some Usefull Staff
+# Last Chaos Some Usefull Stuff
 Most things to start working with lc you will find on [lastchaos.us](https://lastchaos.us) forum ([Discord](https://discord.gg/SBExsZy))  
 
 ### 1. [DDoS Protection (linux)](ddos_protection_linux.txt)
