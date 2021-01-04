@@ -4,7 +4,7 @@
 
 cd /usr/local
 wget https://www.samba.org/ftp/ccache/ccache-3.4.2.tar.gz
-wget https://botan.randombit.net/releases/Botan-1.10.17.tgz
+wget https://botan.randombit.net/releases/old/Botan-1.10.17.tgz
 wget http://archive.apache.org/dist/logging/log4cxx/0.10.0/apache-log4cxx-0.10.0.tar.gz
 wget http://downloads.sourceforge.net/project/jsoncpp/jsoncpp/0.6.0-rc2/jsoncpp-src-0.6.0-rc2.tar.gz
 wget https://www.sqlite.org/2018/sqlite-autoconf-3230100.tar.gz
