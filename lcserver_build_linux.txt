@@ -1,10 +1,10 @@
 # My (probably outdated) notes about compiling LastChaos Server Source on GNU/Linux.
-# last update: 14.05.2018
-# CentOS 64bit, cross compile
+# https://github.com/Karmel0x/lastchaos-some-usefull-stuff/blob/master/lcserver_build_linux.txt
+# CentOS 64bit, cross compile // last update: 14.05.2018
 
 cd /usr/local
 wget https://www.samba.org/ftp/ccache/ccache-3.4.2.tar.gz
-wget https://botan.randombit.net/releases/Botan-1.10.17.tgz
+wget http://botan.randombit.net/releases/old/Botan-1.10.17.tgz
 wget http://archive.apache.org/dist/logging/log4cxx/0.10.0/apache-log4cxx-0.10.0.tar.gz
 wget http://downloads.sourceforge.net/project/jsoncpp/jsoncpp/0.6.0-rc2/jsoncpp-src-0.6.0-rc2.tar.gz
 wget https://www.sqlite.org/2018/sqlite-autoconf-3230100.tar.gz
@@ -30,7 +30,7 @@ yum -y install expat expat-devel openldap openldap-devel
 yum -y install apr apr-devel apr-util apr-util-devel
 
 yum -y install mysql mysql-devel
-####### x64 unix#######
+####### x64 unix #######
 yum -y install gcc.i686 gcc-c++.i686 glibc-devel.i686 libgcc.i686 libstdc++-devel.i686
 yum -y install zlib-devel.i686 ncurses-devel.i686 subversion-devel.i686
 yum -y install libidn-devel.i686 openldap-devel.i686 openssl-devel.i686
