@@ -9,7 +9,7 @@ wget http://archive.apache.org/dist/logging/log4cxx/0.10.0/apache-log4cxx-0.10.0
 wget http://downloads.sourceforge.net/project/jsoncpp/jsoncpp/0.6.0-rc2/jsoncpp-src-0.6.0-rc2.tar.gz
 wget https://www.sqlite.org/2018/sqlite-autoconf-3230100.tar.gz
 wget https://curl.haxx.se/download/curl-7.59.0.tar.gz
-wget https://dl.bintray.com/boostorg/release/1.65.1/source/boost_1_65_1.tar.gz # last supported version
+wget https://boostorg.jfrog.io/artifactory/main/release/1.65.1/source/boost_1_65_1.tar.gz # last supported version
 tar xvzf ccache-3.4.2.tar.gz
 tar xvzf Botan-1.10.17.tgz
 tar xvzf apache-log4cxx-0.10.0.tar.gz
