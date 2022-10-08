@@ -3,9 +3,9 @@ zypper -n source-install -d mariadb
 zypper -n install libgnutls-devel
 zypper -n install jemalloc-devel
 
-wget https://downloads.mariadb.org/f/mariadb-10.5.8/source/mariadb-10.5.8.tar.gz
+wget https://archive.mariadb.org/mariadb-10.5.17/source/mariadb-10.5.17.tar.gz
 tar -xzf mariadb-10*
-cd mariadb-10.5.8
+cd mariadb-10.5.17
 
 cmake . -DBUILD_CONFIG=mysql_release -DWITH_JEMALLOC=no
 make -j2
@@ -21,7 +21,7 @@ zypper -n install insserv-compat
 systemctl enable mysql
 systemctl start mysql
 
-
+# /etc/init.d/mysql start
 
 # ------------------------------------------- 
 
