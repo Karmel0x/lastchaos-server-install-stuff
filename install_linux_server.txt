@@ -1,0 +1,34 @@
+
+# debian 12
+apt update
+apt upgrade
+apt autoremove
+
+## database
+apt install mariadb-server
+
+## web server
+apt install nginx
+
+## php interpreter
+apt install php-fpm php-pdo-mysql php-mbstring
+
+## version control
+apt install git
+
+## nginx configuration
+
+### copy sample config and remove link to disable it
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/your-site-name
+rm -f /etc/nginx/sites-enabled/default
+
+### edit for your needs, check `nginx-sample-config` to see how to enable php
+nano /etc/nginx/sites-available/your-site-name
+
+### make link to enable your config
+ln -s /etc/nginx/sites-available/your-site-name /etc/nginx/sites-enabled/your-site-name
+
+## database configuration
+mariadb
+#### ALTER USER 'root'@'localhost' IDENTIFIED BY 'YOUR_NEW_PASSWORD_FOR_ROOT_HERE';
+#### GRANT ALL PRIVILEGES ON *.* TO 'YOUR_NEW_USER_USERNAME'@'%' IDENTIFIED BY 'YOUR_NEW_USER_PASSWORD';
