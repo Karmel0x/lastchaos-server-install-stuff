@@ -1,13 +1,14 @@
-### DDoS Protection: APF, BFD, DDoS and RootKit Utilities
+# DDoS Protection: APF, BFD, DDoS (OUTDATED)
+# https://www.iplocation.net/apf-bfd-ddos-rootkit
 
-## https://www.iplocation.net/apf-bfd-ddos-rootkit
-# APF -- Advanced Policy-based Firewall
-cd /usr/src
+cd
 mkdir utils
 cd utils
+
+# APF -- Advanced Policy-based Firewall
 wget http://rfxnetworks.com/downloads/apf-current.tar.gz
 tar xfz apf-current.tar.gz
-cd apf-*
+cd apf-current
 ./install.sh
 
 # Read the README.apf and README.antidos for configuration options.
@@ -20,10 +21,9 @@ IG_UDP_CPORTS="53,111"
 apf --start
 
 # BFD -- Brute Force Detection
-cd /usr/src/utils
 wget http://rfxnetworks.com/downloads/bfd-current.tar.gz
 tar xfz bfd-current.tar.gz
-cd bfd-*
+cd bfd-current
 ./install.sh
 
 # Read the README file, and edit the configuration file located in /usr/local/bfd/conf.bfd.
@@ -34,7 +34,6 @@ cd bfd-*
 /usr/local/sbin/bfd -s
 
 # DoS Deflate
-cd /usr/src/utils
 wget http://www.inetbase.com/scripts/ddos/install.sh
 sh install.sh
 

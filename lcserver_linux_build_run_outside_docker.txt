@@ -1,0 +1,55 @@
+
+# if you want to use compiled executables outside docker
+> try changing makefile.inc to build statically
+> or copy binaries with necessary shared libraries
+
+#####
+
+# on docker
+mkdir ../LastChaosServer/Connector/
+mkdir ../LastChaosServer/Helper/
+mkdir ../LastChaosServer/SubHelper/
+mkdir ../LastChaosServer/Messenger/
+mkdir ../LastChaosServer/LoginServer/
+mkdir ../LastChaosServer/GameServer1/
+
+cp Connector/Connector ../LastChaosServer/Connector/
+cp Helper/Helper ../LastChaosServer/Helper/
+cp SubHelper/SubHelper ../LastChaosServer/SubHelper/
+cp Messenger/Messenger ../LastChaosServer/Messenger/
+cp LoginServer/LoginServer ../LastChaosServer/LoginServer/
+cp GameServer/GameServer_d ../LastChaosServer/GameServer1/
+
+#ldd Connector/Connector | awk 'NF == 4 { system("echo cp " $3 " ../LastChaosServer/SharedLibs/") }'
+
+cp /root/lcs/LastChaosServer/SharedLibs/libapr-1.so.0 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libaprutil-1.so.0 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libboost_system.so.1.65.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libboost_thread.so.1.65.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libbotan-1.10.so.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libbz2.so.1.0 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libcrypt.so.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libcrypto.so.1.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libexpat.so.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libgcc_s.so.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libgmp.so.10 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libjsoncpp.so.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/liblog4cxx.so.10 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libmysqlclient.so.20 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libssl.so.1.1 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libstdc++.so.6 ../LastChaosServer/SharedLibs/
+cp /root/lcs/LastChaosServer/SharedLibs/libuuid.so.1 ../LastChaosServer/SharedLibs/
+
+#####
+
+# on host
+dpkg --add-architecture i386
+apt update -y
+apt install -y libc6-i386
+
+cd /mnt/LCSource/LastChaosServer
+export LD_LIBRARY_PATH=SharedLibs:$LD_LIBRARY_PATH
+
+GameServer/GameServer_d
+
+# to debug use gdb

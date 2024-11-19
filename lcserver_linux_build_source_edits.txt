@@ -1,0 +1,40 @@
+# LCSource-01.06.15
+
+ShareLib/LCHttps.cpp:1
+`#ifndef WIN32` -> `#if 0 // #ifndef WIN32`
+
+ShareLib/LCHttps.cpp:2
+`` -> `#include <unistd.h>`
+
+GameServer\doFuncItem_useCashItem.cpp:1342
+`if (pet == false)` -> `if (pet == NULL)`
+
+GameServer\Item.cpp:1239
+`return false;` -> `return NULL;`
+
+GameServer\Item.cpp:1245
+`return false;` -> `return NULL;`
+
+GameServer\Item.cpp:1270
+`return false;` -> `return NULL;`
+
+makefile.inc
+`BOOST_LIB_VER = -gcc44-mt-d-1_58` -> `BOOST_LIB_VER = `
+`-I/usr/local/ssl/include \` -> `-I/usr/include/jsoncpp \`
+`-I/usr/local/include/botan-1.10 \` -> `-I/usr/include/botan-1.10 \`
+
+
+# singletons fix
+> search for all `return &__instance;` occurrences
+> move `static xy __instance;` to be inside `xy::instance()` block
+- Authentication\ClientForClient.cpp:28
+- Authentication\ClientForServer.cpp:28
+- ShareLib\bnf.cpp:45
+- ShareLib\ServerAuthentication.cpp:59
+- SubHelper\NoticeSystemAgent.cpp:25
+
+
+# config (optional)
+ShareLib/Config_Localize_USA.h
+`#define SERVER_AUTHENTICATION` -> `//#define SERVER_AUTHENTICATION`
+`#define XTRAP` -> `//#define XTRAP`
