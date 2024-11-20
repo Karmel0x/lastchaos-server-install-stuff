@@ -12,7 +12,7 @@ apt update -y
 apt upgrade -y
 apt autoremove -y
 
-apt install -y nano wget zip
+#apt install -y nano wget zip
 apt install -y build-essential
 apt install -y subversion ccache
 

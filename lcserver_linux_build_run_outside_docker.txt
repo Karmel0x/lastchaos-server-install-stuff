@@ -20,6 +20,7 @@ cp Messenger/Messenger ../LastChaosServer/Messenger/
 cp LoginServer/LoginServer ../LastChaosServer/LoginServer/
 cp GameServer/GameServer_d ../LastChaosServer/GameServer1/
 
+mkdir ../LastChaosServer/SharedLibs/
 #ldd Connector/Connector | awk 'NF == 4 { system("echo cp " $3 " ../LastChaosServer/SharedLibs/") }'
 
 cp /root/lcs/LastChaosServer/SharedLibs/libapr-1.so.0 ../LastChaosServer/SharedLibs/
@@ -52,4 +53,5 @@ export LD_LIBRARY_PATH=SharedLibs:$LD_LIBRARY_PATH
 
 GameServer/GameServer_d
 
-# to debug use gdb
+# to multiplex terminal use tmux
+# to debug binaries use gdb
