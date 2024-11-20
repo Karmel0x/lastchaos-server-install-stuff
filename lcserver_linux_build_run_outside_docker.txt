@@ -6,6 +6,7 @@
 #####
 
 # on docker
+mkdir ../LastChaosServer/
 mkdir ../LastChaosServer/Connector/
 mkdir ../LastChaosServer/Helper/
 mkdir ../LastChaosServer/SubHelper/
@@ -22,24 +23,25 @@ cp GameServer/GameServer_d ../LastChaosServer/GameServer1/
 
 mkdir ../LastChaosServer/SharedLibs/
 #ldd Connector/Connector | awk 'NF == 4 { system("echo cp " $3 " ../LastChaosServer/SharedLibs/") }'
+#ldd GameServer/GameServer_d | awk 'NF == 4 { system("echo cp " $3 " ../LastChaosServer/SharedLibs/") }'
 
-cp /root/lcs/LastChaosServer/SharedLibs/libapr-1.so.0 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libaprutil-1.so.0 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libboost_system.so.1.65.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libboost_thread.so.1.65.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libbotan-1.10.so.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libbz2.so.1.0 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libcrypt.so.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libcrypto.so.1.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libexpat.so.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libgcc_s.so.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libgmp.so.10 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libjsoncpp.so.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/liblog4cxx.so.10 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libmysqlclient.so.20 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libssl.so.1.1 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libstdc++.so.6 ../LastChaosServer/SharedLibs/
-cp /root/lcs/LastChaosServer/SharedLibs/libuuid.so.1 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libapr-1.so.0 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libaprutil-1.so.0 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libboost_system.so.1.65.1 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libboost_thread.so.1.65.1 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libcrypto.so.1.1 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libgmp.so.10 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libjsoncpp.so.1 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/liblog4cxx.so.10 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libmysqlclient.so.20 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libssl.so.1.1 ../LastChaosServer/SharedLibs/
+cp /usr/lib/i386-linux-gnu/libstdc++.so.6 ../LastChaosServer/SharedLibs/
+cp /usr/lib/libbotan-1.10.so.1 ../LastChaosServer/SharedLibs/
+cp /lib/i386-linux-gnu/libbz2.so.1.0 ../LastChaosServer/SharedLibs/
+cp /lib/i386-linux-gnu/libcrypt.so.1 ../LastChaosServer/SharedLibs/
+cp /lib/i386-linux-gnu/libexpat.so.1 ../LastChaosServer/SharedLibs/
+cp /lib/i386-linux-gnu/libgcc_s.so.1 ../LastChaosServer/SharedLibs/
+cp /lib/i386-linux-gnu/libuuid.so.1 ../LastChaosServer/SharedLibs/
 
 #####
 

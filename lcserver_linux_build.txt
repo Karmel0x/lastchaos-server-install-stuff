@@ -3,10 +3,12 @@
 # windows: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
 # linux: apt install -y docker
 
-#####
-
 cd LCSource
-docker run --name lcbuild -v .:/mnt/LCSource -it i386/ubuntu:18.04 bash
+
+# windows: docker run --name lcbuild -v .:/mnt/LCSource -it i386/ubuntu:18.04 bash
+# linux: docker run --name lcbuild -v $(pwd):/mnt/LCSource -it i386/ubuntu:18.04 bash
+
+#####
 
 apt update -y
 apt upgrade -y
