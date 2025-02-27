@@ -6,6 +6,7 @@ apt autoremove
 
 ## database
 apt install mariadb-server
+mysql_secure_installation # Switch to unix_socket authentication [Y/n] n
 
 ## web server
 apt install nginx

@@ -1,7 +1,7 @@
 # https://github.com/Karmel0x/lastchaos-server-install-stuff
 
 # windows: https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
-# linux: apt install -y docker
+# linux: apt install -y docker.io
 
 cd LCSource
 
